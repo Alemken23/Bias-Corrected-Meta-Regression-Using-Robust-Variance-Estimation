@@ -2,21 +2,20 @@
 ## Visuals for RVE analysis--graphics of various data
 
 mdata <- read.csv('mrwp_mdata.csv',header=T,sep=",")
-getwd()
 head (mdata);str(mdata)
-#attach(mdata)
+# attach(mdata)
 pem=subset(mdata, y_p_d=="P")
 head(pem);str(pem)
 names(pem)
-#attach(pem)
+# attach(pem)
 iem=subset(mdata,y_p_d=="Y")
 head(iem);str(iem)
 hem=subset(mdata,y_p_d=="D")
 head(hem);str(hem)
-#removing na values from the entire dataset
+# removing na values from the entire dataset
 mdatan.na.omit<-na.omit(mdata)
 mdatan.na.omit
-#to make the names shorter#
+# to make the names shorter#
 mdatan<-na.omit(mdata)
 mdatan
 ### creating a subset for each elasticity type with na's removed ###
@@ -137,7 +136,7 @@ print(hi4)
 
 
 ###########
-### Funnel Plot ###
+### Funnel Plot for Price and Income Elasticities  ###
 #  I have plotted study averages here.
 #  The formula for the rma is not dealing with the
 #  the repeats
