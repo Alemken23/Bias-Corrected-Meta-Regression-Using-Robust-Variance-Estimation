@@ -1,13 +1,9 @@
-#Engel Curve
-
+# Load Libraries 
 library(robumeta)
 library(metafor)
 library(dplyr)
 library(devtools)
-#install.packages("sessioninfo")
 library(sessioninfo)
-#install.packages("devtools")
-
 library(clubSandwich)
 library(nlme)
 library(vioplot)
@@ -15,43 +11,34 @@ library(lmtest)
 library(memisc)
 library(car)
 library(carData)
-#install.packages("stargazer")
 library(stargazer)
-#install.packages("timeDate")
-#install.packages("class")
-#install.packages("nnet")
 library(nnet)
 library(class)
 library(timeDate)
-#install.packages("caret")
 library(caret)
-#install.packages("rgl")
 library(rgl)
-#install.packages("sandwich")
-#install.packages("survival)")
-
 library(sandwich)
 library(survival)
-
 library(foreign)
 library(Formula)
 library(AER)
-#install.packages("dummies")
 library(dummies)
 library(BMS)
+# Load data
 mdata <- read.csv('updated_mrwp_mdata_prefinal.csv',header=T,sep=",")
-
+# Quick check with the data
 dim(mdata)
 summary(as.factor(mdata$form))
-
 head (mdata);str(mdata)
-
+# Isolate price elasticity estimates 
 pem=subset(mdata, y_p_d=="P")
 head(pem);str(pem)
 names(pem)
 dim(pem)
+# Isolate income elasticity estimates 
 iem=subset(mdata,y_p_d=="Y")
 head(iem);str(iem)
+# Isolate people elasticity estimates 
 #hem=subset(mdata,y_p_d=="D")
 #head(hem);str(hem)
 #removing na values from the entire dataset
@@ -273,7 +260,6 @@ print(resp3)
 resp4 <- puni_star(yi = pem$est, vi = pem$var, side = "right", method = "ML",
                    alpha = .05,boot = FALSE)
 print(resp4)
-
 
 #puni_star(yi = data$discrate_med, vi = data$variance_med, side="right", 
 #method="ML",alpha = 0.05, control=list( max.iter=1000,tol=0.1,reps=10000, 
