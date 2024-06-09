@@ -25,7 +25,7 @@ library(AER)
 library(dummies)
 library(BMS)
 # Load data
-mdata <- read.csv('updated_mrwp_mdata_prefinal.csv',header=T,sep=",")
+mdata <- read.csv('mrwp_mdata.csv',header=T,sep=",")
 # Quick check with the data
 dim(mdata)
 summary(as.factor(mdata$form))
