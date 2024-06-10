@@ -1,6 +1,6 @@
 
 
-## Weighted mean values-OLS based estimation
+## Weighted mean values for all elasticities--OLS based estimation
 
 edata <- read.csv('mrwp_mdata.csv',header=T,sep=",")
 
